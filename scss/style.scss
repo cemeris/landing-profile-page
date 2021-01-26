@@ -1,0 +1,30 @@
+/** @format */
+
+$base-color: #ccc;
+body {
+  background: $base-color;
+}
+
+header {
+  background: url(../bg.jpg);
+  height: 300px;
+}
+
+main {
+  background: #ffffff;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2), 0px 2px 24px rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  min-height: 400px;
+}
+
+$default-size: 16;
+.profile {
+  text-align: center;
+  font-size: 20px;
+  &__picture {
+    position: relative;
+    top: -70 / $default-size + 0em;
+    width: 160 / $default-size + 0em;
+    height: 160 / $default-size + 0em;
+  }
+}
