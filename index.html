@@ -18,9 +18,9 @@
       </div>
       <div class="gallery">
         <nav class="gallery__tab-nav">
-          <a class="gallery__tab" href="#" onclick="showTab(0).bind(this);"><i class="studio_icon"></i><span>studio</span></a>
-          <a class="gallery__tab gallery__tab--active" href="#"  onclick="showTab(1).bind(this);"><i class="work_icon"></i><span>work</span></a>
-          <a class="gallery__tab" href="#"  onclick="showTab(2).bind(this);"><i class="favorite_icon"></i><span>favorite</span></a>
+          <a class="gallery__tab" href="#" onclick="showTab.bind([event, this])(0);"><i class="studio_icon"></i><span>studio</span></a>
+          <a class="gallery__tab gallery__tab--active" href="#"  onclick="showTab.bind([event, this])(1);"><i class="work_icon"></i><span>work</span></a>
+          <a class="gallery__tab" href="#"  onclick="showTab.bind([event, this])(2);"><i class="favorite_icon"></i><span>favorite</span></a>
         </nav>
         <div class="gallery__photos gallery__photos--show">
           <div class="gallery__column">
@@ -55,8 +55,7 @@
 <script>
   function showTab(i) {
     document.querySelector('.gallery__tab--active').classList.remove('gallery__tab--active');
-    console.log(this);
-    this.classList.add("gallery__tab--active");
- 
+    this[0].preventDefault();
+    this[1].classList.add("gallery__tab--active");
   }
 </script>
